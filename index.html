@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Maa Durga Chaat | Authentic Indian Street Food</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:#fff8ef;
+    color:#35150b;
+}
+
+/* NAVBAR */
+.navbar{
+    position:sticky;
+    top:0;
+    z-index:999;
+    background:#7b0000;
+    color:white;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 6%;
+    box-shadow:0 4px 15px #0004;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+    color:#ffd54f;
+}
+
+.logo small{
+    display:block;
+    font-size:10px;
+    color:white;
+    letter-spacing:2px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    list-style:none;
+}
+
+.nav-links a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.nav-links a:hover{
+    color:#ffd54f;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* HERO */
+.hero{
+    min-height:92vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:white;
+    padding:30px 20px;
+    background:
+    linear-gradient(#580000bb,#260000cc),
+    url("https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1800&q=85")
+    center/cover;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-block;
+    background:#ffd54f;
+    color:#680000;
+    padding:9px 18px;
+    border-radius:30px;
+    font-weight:bold;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:65px;
+    color:#ffd54f;
+    margin-bottom:15px;
+}
+
+.hero h2{
+    font-size:32px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:20px;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    border:none;
+    cursor:pointer;
+    padding:13px 24px;
+    border-radius:30px;
+    background:#ffb300;
+    color:#4b1600;
+    font-weight:bold;
+    text-decoration:none;
+    transition:.3s;
+    margin:4px;
+}
+
+.btn:hover{
+    transform:translateY(-3px) scale(1.03);
+    background:#ffd54f;
+}
+
+.btn-red{
+    background:#d62828;
+    color:white;
+}
+
+/* SECTIONS */
+section{
+    padding:75px 7%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    font-size:40px;
+    color:#820000;
+}
+
+.section-title p{
+    margin-top:10px;
+    color:#765;
+}
+
+/* CATEGORY */
+.categories{
+    display:flex;
+    justify-content:center;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:30px;
+}
+
+.category{
+    border:2px solid #a60000;
+    background:white;
+    color:#820000;
+    padding:10px 18px;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.category.active,
+.category:hover{
+    background:#820000;
+    color:white;
+}
+
+/* SEARCH */
+.search{
+    max-width:550px;
+    margin:0 auto 35px;
+}
+
+.search input{
+    width:100%;
+    padding:16px 22px;
+    border:2px solid #e2a800;
+    border-radius:35px;
+    font-size:16px;
+    outline:none;
+}
+
+/* MENU */
+.menu-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.food-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0 7px 20px #0002;
+    transition:.3s;
+}
+
+.food-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 14px 30px #0003;
+}
+
+.food-img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.food-info{
+    padding:20px;
+}
+
+.food-info h3{
+    color:#820000;
+    font-size:21px;
+    margin-bottom:8px;
+}
+
+.food-info p{
+    color:#766;
+    line-height:1.5;
+    min-height:45px;
+}
+
+.price{
+    color:#d84315;
+    font-size:23px;
+    font-weight:bold;
+    margin:15px 0;
+}
+
+.cart-count{
+    background:#d62828;
+    color:white;
+    border-radius:50%;
+    padding:3px 7px;
+    font-size:12px;
+}
+
+/* ABOUT */
+.about{
+    background:#fff0d2;
+}
+
+.about-box{
+    max-width:1000px;
+    margin:auto;
+    text-align:center;
+}
+
+.about-box > p{
+    font-size:18px;
+    line-height:1.8;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+    gap:20px;
+    margin-top:35px;
+}
+
+.feature{
+    background:white;
+    padding:28px 20px;
+    border-radius:18px;
+    box-shadow:0 5px 15px #0002;
+}
+
+.feature .icon{
+    font-size:35px;
+}
+
+.feature h3{
+    margin:10px 0;
+    color:#820000;
+}
+
+/* OFFER */
+.offer{
+    background:linear-gradient(135deg,#790000,#d84315);
+    color:white;
+    text-align:center;
+}
+
+.offer h2{
+    font-size:42px;
+    color:#ffd54f;
+    margin-bottom:12px;
+}
+
+.offer p{
+    font-size:19px;
+}
+
+/* CART */
+#order{
+    background:#fff0d2;
+}
+
+.cart-box{
+    max-width:800px;
+    margin:auto;
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 7px 20px #0002;
+}
+
+.cart-empty{
+    text-align:center;
+    color:#777;
+    padding:20px;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:15px;
+    padding:15px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.item-name{
+    font-weight:bold;
+}
+
+.quantity{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.quantity button{
+    border:none;
+    width:30px;
+    height:30px;
+    border-radius:50%;
+    background:#820000;
+    color:white;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.remove{
+    border:none;
+    background:#eee;
+    color:#900;
+    padding:7px 10px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+.total{
+    text-align:right;
+    font-size:25px;
+    color:#820000;
+    font-weight:bold;
+    margin:25px 0;
+}
+
+/* REVIEWS */
+.reviews{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:25px;
+}
+
+.review{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 5px 15px #0002;
+}
+
+.stars{
+    color:#ffae00;
+    font-size:22px;
+    margin-bottom:10px;
+}
+
+.review p{
+    line-height:1.6;
+    color:#665;
+}
+
+.review h4{
+    color:#820000;
+    margin-top:15px;
+}
+
+/* CONTACT */
+.contact{
+    background:#fff5e5;
+}
+
+.contact-grid{
+    max-width:1000px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+}
+
+.contact-card{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0 5px 18px #0002;
+}
+
+.contact-card h3{
+    color:#820000;
+    font-size:25px;
+    margin-bottom:20px;
+}
+
+.contact-card p{
+    margin:15px 0;
+    font-size:17px;
+}
+
+.contact-card a{
+    color:#d84315;
+    font-weight:bold;
+    text-decoration:none;
+}
+
+/* HOURS */
+.hours{
+    margin-top:20px;
+}
+
+.hours div{
+    display:flex;
+    justify-content:space-between;
+    padding:8px 0;
+    border-bottom:1px dashed #ccc;
+}
+
+/* FOOTER */
+footer{
+    background:#320800;
+    color:white;
+    text-align:center;
+    padding:30px 15px;
+}
+
+footer strong{
+    color:#ffd54f;
+}
+
+.social{
+    margin:15px 0;
+    font-size:25px;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:58px;
+    height:58px;
+    border-radius:50%;
+    background:#25d366;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:29px;
+    text-decoration:none;
+    z-index:1000;
+    box-shadow:0 5px 15px #0004;
+}
+
+/* MOBILE */
+@media(max-width:700px){
+
+    .navbar{
+        flex-wrap:wrap;
+    }
+
+    .menu-btn{
+        display:block;
+    }
+
+    .nav-links{
+        display:none;
+        width:100%;
+        flex-direction:column;
+        text-align:center;
+        padding-top:15px;
+    }
+
+    .nav-links.show{
+        display:flex;
+    }
+
+    .hero h1{
+        font-size:42px;
+    }
+
+    .hero h2{
+        font-size:24px;
+    }
+
+    .hero p{
+        font-size:17px;
+    }
+
+    section{
+        padding:55px 5%;
+    }
+
+    .section-title h2{
+        font-size:32px;
+    }
+
+    .contact-grid{
+        grid-template-columns:1fr;
+    }
+
+    .cart-item{
+        flex-wrap:wrap;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+    <div class="logo">
+        🌺 Maa Durga Chaat
+        <small>AUTHENTIC INDIAN STREET FOOD</small>
+    </div>
+
+    <div class="menu-btn" onclick="toggleMenu()">☰</div>
+
+    <ul class="nav-links" id="navLinks">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#order">Order 🛒</a></li>
+        <li><a href="#reviews">Reviews</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <div class="badge">🌶️ Fresh • Crispy • Delicious</div>
+
+        <h1>🌺 Maa Durga Chaat</h1>
+
+        <h2>India's Favourite Street Food Experience</h2>
+
+        <p>
+            Pani Puri • Samosa Chaat • Dahi Puri • Sev Puri
+            & much more!
+        </p>
+
+        <a href="#menu" class="btn">🍽️ Explore Menu</a>
+
+        <a href="#order" class="btn btn-red">
+            🛒 Order Now
+        </a>
+
+    </div>
+
+</section>
+
+<!-- MENU -->
+<section id="menu">
+
+    <div class="section-title">
+        <h2>Our Special Menu</h2>
+        <p>Choose your favourite chaat and enjoy the taste!</p>
+    </div>
+
+    <div class="categories">
+
+        <button class="category active" onclick="filterFood('all',this)">
+            All
+        </button>
+
+        <button class="category" onclick="filterFood('puri',this)">
+            Puri
+        </button>
+
+        <button class="category" onclick="filterFood('chaat',this)">
+            Chaat
+        </button>
+
+        <button class="category" onclick="filterFood('special',this)">
+            Special
+        </button>
+
+        <button class="category" onclick="filterFood('snack',this)">
+            Snacks
+        </button>
+
+    </div>
+
+    <div class="search">
+        <input
+            type="text"
+            id="search"
+            placeholder="🔍 Search food..."
+            onkeyup="searchFood()"
+        >
+    </div>
+
+    <div class="menu-grid" id="foodGrid">
+
+        <!-- 1 -->
+        <div class="food-card" data-category="puri" data-name="pani puri">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROHsiLZAvi8Bs4bSumGoeBWKkww7SxmZ-8OxdLhVL5sg&s=10"
+            alt="Pani Puri">
+
+            <div class="food-info">
+
+                <h3>🥣 Pani Puri</h3>
+
+                <p>
+                    Crispy puris filled with spicy,
+                    tangy and refreshing pani.
+                </p>
+
+                <div class="price">₹20</div>
+
+                <button class="btn"
+                onclick="addItem('Pani Puri',20)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="food-card" data-category="chaat" data-name="samosa chaat">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXcJkCj9A_3orq9HbFFkPGkgPkOPclLTE2MODPfy-iNQ&s=10"
+            alt="Samosa Chaat">
+
+            <div class="food-info">
+
+                <h3>🥟 Samosa Chaat</h3>
+
+                <p>
+                    Crispy samosa with chutney,
+                    spices and delicious toppings.
+                </p>
+
+                <div class="price">₹50</div>
+
+                <button class="btn"
+                onclick="addItem('Samosa Chaat',50)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="food-card" data-category="puri" data-name="dahi puri">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThpR39EPKOR00jALZDxOfcjRHNRRbp_2DZWCxJGtCoSA&s=10"
+            alt="Dahi Puri">
+
+            <div class="food-info">
+
+                <h3>🥛 Dahi Puri</h3>
+
+                <p>
+                    Crispy puri with creamy dahi,
+                    chutneys and sev.
+                </p>
+
+                <div class="price">₹50</div>
+
+                <button class="btn"
+                onclick="addItem('Dahi Puri',50)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="food-card" data-category="puri" data-name="sev puri">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQ7iLW45ecfW_kUsxAhjCpI8wIiqDHCyWL0LDc5P4lzg&s=10"
+            alt=" Sev Puri ">
+
+            <div class="food-info">
+
+                <h3>🌶️ Sev Puri </h3>
+
+                <p>
+                    Crispy puris topped with potato,
+                    chutneys and crunchy sev.
+                </p>
+
+                <div class="price">₹50</div>
+
+                <button class="btn"
+                onclick="addItem('Sev Puri',50)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="food-card" data-category="chaat" data-name="aloo tikki chaat">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5PG1M-3rQGlCTqhEFn413mqrN2K4lSUfc_S0C70BqLg&s=10"
+            alt="Aloo Tikki Chaat">
+
+            <div class="food-info">
+
+                <h3>🥔 Aloo Tikki Chaat</h3>
+
+                <p>
+                    Crispy potato tikki with special
+                    masala and chutneys.
+                </p>
+
+                <div class="price">₹50</div>
+
+                <button class="btn"
+                onclick="addItem('Aloo Tikki Chaat',50)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="food-card" data-category="special" data-name="special aapni samosa chaat">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRCCnUEvPqM5wQDl-Ny063i7ihfU3GBIkC8WPdl1kTDkA&s=10"
+            alt="Special Samosa Chaat">
+
+            <div class="food-info">
+
+                <h3>🔥 Special  Samosa Chaat</h3>
+
+                <p>
+                    Our signature special samosa
+                    chaat with extra flavour.
+                </p>
+
+                <div class="price">₹60</div>
+
+                <button class="btn"
+                onclick="addItem('Special Samosa Chaat',60)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="food-card" data-category="snack" data-name="aloo cut">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtIVU031COVEmn9X_Ci7IhhiEKLDki81FaFbCVQ4NKwg&s=10"
+            alt="Aloo Cut">
+
+            <div class="food-info">
+
+                <h3>🥔 Aloo Cut</h3>
+
+                <p>
+                    Crispy potato snack with
+                    our special masala.
+                </p>
+
+                <div class="price">₹40</div>
+
+                <button class="btn"
+                onclick="addItem('Aloo Cut',40)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="food-card" data-category="snack" data-name="churmur">
+
+            <img class="food-img"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2vaO0Ep6EkQIc6xqVucygvHhj9AUFcv_HPMMr8oqsFA&s=10"
+            alt="Churmur">
+
+            <div class="food-info">
+
+                <h3>😋 Churmur</h3>
+
+                <p>
+                    Crunchy, spicy and tangy
+                    street-food favourite.
+                </p>
+
+                <div class="price">₹40</div>
+
+                <button class="btn"
+                onclick="addItem('Churmur',40)">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+
+    <div class="section-title">
+        <h2>Why Maa Durga Chaat?</h2>
+        <p>Good food brings people together ❤️</p>
+    </div>
+
+    <div class="about-box">
+
+        <p>
+            Welcome to <strong>Maa Durga Chaat</strong>,
+            where authentic Indian street-food flavours
+            meet freshness and quality. From crispy
+            pani puri to delicious samosa chaat,
+            every plate is prepared to give you
+            a memorable taste experience.
+        </p>
+
+        <div class="features">
+
+            <div class="feature">
+                <div class="icon">🥗</div>
+                <h3>Fresh Ingredients</h3>
+                <p>Fresh ingredients for delicious food.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">🌶️</div>
+                <h3>Special Masala</h3>
+                <p>Authentic flavour in every bite.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">👨‍🍳</div>
+                <h3>Made With Care</h3>
+                <p>Prepared with attention and care.</p>
+            </div>
+
+            <div class="feature">
+                <div class="icon">❤️</div>
+                <h3>Made For You</h3>
+                <p>Your satisfaction matters to us.</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OFFER -->
+<section class="offer">
+
+    <h2>🔥 Maa Durga Special 🔥</h2>
+
+    <p>
+        Craving something spicy, crispy and delicious?
+        Come enjoy your favourite chaat!
+    </p>
+
+    <br>
+
+    <a href="#menu" class="btn">
+        🍽️ See Full Menu
+    </a>
+
+</section>
+
+<!-- ORDER -->
+<section id="order">
+
+    <div class="section-title">
+
+        <h2>🛒 Your Order</h2>
+
+        <p>
+            Add your favourite food and send your order
+            directly on WhatsApp.
+        </p>
+
+    </div>
+
+    <div class="cart-box">
+
+        <div id="cartItems" class="cart-empty">
+            Your cart is empty.
+        </div>
+
+        <div class="total">
+            Total: ₹<span id="total">0</span>
+        </div>
+
+        <button class="btn"
+        onclick="sendWhatsApp()">
+            📲 Order on WhatsApp
+        </button>
+
+        <button class="btn btn-red"
+        onclick="clearCart()">
+            🗑️ Clear Cart
+        </button>
+
+    </div>
+
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+
+    <div class="section-title">
+        <h2>⭐ Customer Love</h2>
+        <p>What our customers say</p>
+    </div>
+
+    <div class="reviews">
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Very tasty chaat and amazing
+                pani puri. Loved the flavour!"
+            </p>
+
+            <h4>— Happy Customer</h4>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Samosa chaat was delicious.
+                The chutney and masala were great."
+            </p>
+
+            <h4>— Chaat Lover</h4>
+
+        </div>
+
+        <div class="review">
+
+            <div class="stars">★★★★★</div>
+
+            <p>
+                "Fresh, spicy and full of flavour.
+                Definitely worth trying."
+            </p>
+
+            <h4>— Food Lover</h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+    <div class="section-title">
+
+        <h2>📞 Contact Maa Durga Chaat</h2>
+
+        <p>
+            Call us or order directly on WhatsApp.
+        </p>
+
+    </div>
+
+    <div class="contact-grid">
+
+        <div class="contact-card">
+
+            <h3>📱 Contact Us</h3>
+
+            <p>
+                Phone 1:
+                <a href="tel:9241717912">
+                    92417 17912
+                </a>
+            </p>
+
+            <p>
+                Phone 2:
+                <a href="tel:9304282295">
+                    93042 82295
+                </a>
+            </p>
+
+            <p>
+                WhatsApp:
+                <a href="https://wa.me/919241717912">
+                    Chat With Us
+                </a>
+            </p>
+
+            <a href="tel:9241717912"
+            class="btn">
+                📞 Call Now
+            </a>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>🕐 Opening Hours</h3>
+
+            <div class="hours">
+
+                <div>
+                    <span>Monday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Tuesday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Wednesday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Thursday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Friday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Saturday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+                <div>
+                    <span>Sunday</span>
+                    <strong>11 AM – 6 PM</strong>
+                </div>
+
+            </div>
+
+            <p style="margin-top:15px;">
+                ⚠️ Please confirm today's timing by phone.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        🌺 <strong>Maa Durga Chaat</strong>
+    </p>
+
+    <div class="social">
+        ❤️ 🌶️ 🥟 🥣 ❤️
+    </div>
+
+    <p>
+        Authentic Indian Street Food
+    </p>
+
+    <br>
+
+    <p>
+        © 2026 Maa Durga Chaat. All Rights Reserved.
+    </p>
+
+</footer>
+
+<!-- FLOATING WHATSAPP -->
+<a class="whatsapp"
+href="https://wa.me/919241717912"
+target="_blank"
+title="Order on WhatsApp">
+    💬
+</a>
+
+
+<script>
+
+/* CART DATA */
+let cart = [];
+
+
+/* MOBILE MENU */
+function toggleMenu(){
+
+    document
+    .getElementById("navLinks")
+    .classList.toggle("show");
+
+}
+
+
+/* ADD ITEM */
+function addItem(name,price){
+
+    let existing =
+        cart.find(item => item.name === name);
+
+    if(existing){
+
+        existing.quantity++;
+
+    }else{
+
+        cart.push({
+            name:name,
+            price:price,
+            quantity:1
+        });
+
+    }
+
+    displayCart();
+
+    document
+    .getElementById("order")
+    .scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* DISPLAY CART */
+function displayCart(){
+
+    const box =
+        document.getElementById("cartItems");
+
+    const totalBox =
+        document.getElementById("total");
+
+    if(cart.length === 0){
+
+        box.innerHTML =
+        "Your cart is empty.";
+
+        totalBox.innerText = "0";
+
+        return;
+    }
+
+    let html = "";
+    let total = 0;
+
+    cart.forEach((item,index)=>{
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+        html += `
+
+        <div class="cart-item">
+
+            <div>
+                <div class="item-name">
+                    ${item.name}
+                </div>
+
+                <small>
+                    ₹${item.price} each
+                </small>
+            </div>
+
+            <div class="quantity">
+
+                <button onclick="changeQty(${index},-1)">
+                    −
+                </button>
+
+                <strong>
+                    ${item.quantity}
+                </strong>
+
+                <button onclick="changeQty(${index},1)">
+                    +
+                </button>
+
+            </div>
+
+            <strong>
+                ₹${itemTotal}
+            </strong>
+
+            <button class="remove"
+            onclick="removeItem(${index})">
+                ✕
+            </button>
+
+        </div>
+
+        `;
+
+    });
+
+    box.innerHTML = html;
+
+    totalBox.innerText = total;
+
+}
+
+
+/* CHANGE QUANTITY */
+function changeQty(index,change){
+
+    cart[index].quantity += change;
+
+    if(cart[index].quantity <= 0){
+
+        cart.splice(index,1);
+
+    }
+
+    displayCart();
+
+}
+
+
+/* REMOVE */
+function removeItem(index){
+
+    cart.splice(index,1);
+
+    displayCart();
+
+}
+
+
+/* CLEAR */
+function clearCart(){
+
+    cart = [];
+
+    displayCart();
+
+}
+
+
+/* WHATSAPP ORDER */
+function sendWhatsApp(){
+
+    if(cart.length === 0){
+
+        alert("Please add food to your cart first.");
+
+        return;
+    }
+
+    let message =
+    "Hello Maa Durga Chaat!%0A%0A";
+
+    message +=
+    "I would like to order:%0A%0A";
+
+    let total = 0;
+
+    cart.forEach((item,index)=>{
+
+        let itemTotal =
+            item.price * item.quantity;
+
+        total += itemTotal;
+
+        message +=
+        `${index+1}. ${item.name} x${item.quantity} - ₹${itemTotal}%0A`;
+
+    });
+
+    message +=
+    `%0ATotal: ₹${total}%0A%0A`;
+
+    message +=
+    "Please confirm my order. Thank you!";
+
+    window.open(
+        "https://wa.me/919241717912?text="+message,
+        "_blank"
+    );
+
+}
+
+
+/* SEARCH */
+function searchFood(){
+
+    let input =
+        document
+        .getElementById("search")
+        .value
+        .toLowerCase();
+
+    let cards =
+        document.querySelectorAll(".food-card");
+
+    cards.forEach(card=>{
+
+        let name =
+            card.dataset.name.toLowerCase();
+
+        if(name.includes(input)){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+}
+
+
+/* CATEGORY FILTER */
+function filterFood(category,button){
+
+    document
+    .querySelectorAll(".category")
+    .forEach(btn=>{
+        btn.classList.remove("active");
+    });
+
+    button.classList.add("active");
+
+    let cards =
+        document.querySelectorAll(".food-card");
+
+    cards.forEach(card=>{
+
+        if(
+            category === "all" ||
+            card.dataset.category === category
+        ){
+
+            card.style.display="block";
+
+        }else{
+
+            card.style.display="none";
+
+        }
+
+    });
+
+    document.getElementById("search").value="";
+
+}
+
+</script>
+
+</body>
+</html>
+```
